@@ -1,0 +1,9 @@
+aiohttp
+click
+httpx
+pyyaml
+requests
+rich
+toml
+typer
+uv

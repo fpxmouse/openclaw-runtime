@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OpenClaw Runtime</Name>
+  <Repository>ghcr.io/YOUR_GITHUB_USERNAME/openclaw-runtime:latest</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/YOUR_GITHUB_USERNAME/openclaw-runtime</Support>
+  <Project>https://github.com/YOUR_GITHUB_USERNAME/openclaw-runtime</Project>
+  <Overview>A production-ready runtime image layer for OpenClaw with pip, uv, Node, npm, Git, Docker CLI, and automatic skill dependency installation.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/openclaw-runtime/main/unraid/openclaw-runtime.xml</TemplateURL>
+  <Icon></Icon>
+  <ExtraParams></ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <Description>OpenClaw Runtime keeps upstream OpenClaw compatible while adding the runtime tools needed by Python and Node skills.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/openclaw</HostDir>
+      <ContainerDir>/root/.openclaw</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Name>OPENROUTER_API_KEY</Name>
+      <Value></Value>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Name>OPENCLAW_RUNTIME_AUTO_INSTALL_SKILLS</Name>
+      <Value>1</Value>
+      <Mode></Mode>
+    </Variable>
+  </Environment>
+  <Config Name="Appdata" Target="/root/.openclaw" Default="/mnt/user/appdata/openclaw" Mode="rw" Description="Persistent OpenClaw data and skills." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/openclaw</Config>
+  <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Optional. Allows skills to use the host Docker daemon." Type="Path" Display="advanced" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="OpenRouter API Key" Target="OPENROUTER_API_KEY" Default="" Mode="" Description="Optional OpenRouter API key." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Auto Install Skills" Target="OPENCLAW_RUNTIME_AUTO_INSTALL_SKILLS" Default="1" Mode="" Description="Install Python and Node dependencies for installed skills when the container starts." Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+</Container>

@@ -1,0 +1,9 @@
+{
+  "name": "openclaw-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A production-ready runtime image layer for OpenClaw.",
+  "scripts": {
+    "lint:shell": "shellcheck docker-entrypoint.sh scripts/*.sh"
+  }
+}
