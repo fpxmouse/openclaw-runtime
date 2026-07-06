@@ -115,7 +115,7 @@ OPENCLAW_RUNTIME_SKILLS_DIR=/path/to/skills
 Use this image in the Unraid Docker template:
 
 ```text
-ghcr.io/YOUR_GITHUB_USERNAME/openclaw-runtime:latest
+ghcr.io/fpxmouse/openclaw-runtime:latest
 ```
 
 Recommended mappings:
