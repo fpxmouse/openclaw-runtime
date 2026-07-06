@@ -63,7 +63,7 @@ ocr repair
 5. After the workflow finishes, your image will be published to:
 
 ```text
-ghcr.io/YOUR_GITHUB_USERNAME/openclaw-runtime:latest
+ghcr.io/fpxmouse/openclaw-runtime:latest
 ```
 
 If GHCR says the package is private, open the package settings and change visibility to public.
