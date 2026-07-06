@@ -6,6 +6,7 @@ on:
     - cron: "29 4 * * *"
 
 permissions:
+  actions: write
   contents: read
   packages: write
 
@@ -15,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.0
 
       - name: Trigger build workflow
         env:
